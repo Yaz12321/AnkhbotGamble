@@ -74,9 +74,30 @@
   },
     "BaseResponse": {
     "type": "textbox",
-    "value": "{0} just gambled {2} {3}! {0} managed to get {1} {3} back, and now has {4} {3} in total!",
+    "value": "{0} just gambled {2} {3}! {0} managed to get {1} {3} back, that's {6} {3} difference, and now has {4} {3} in total! {5}",
     "label": "Success message",
-    "tooltip": " {0} = user \r\n {1} = winnings \r\n {2} = amount gambled \r\n {3} = currency name \r\n {4} = user's points",
+    "tooltip": " {0} = user \r\n {1} = Total returned \r\n {2} = amount gambled \r\n {3} = currency name \r\n {4} = user's points \r\n {5} = Emote \r\n {6} = Amount won/lost",
+    "group": "Responses"
+  },
+    "Win": {
+    "type": "textbox",
+    "value": "FeelsGoodMan",
+    "label": "Emote/Message for Wining",
+    "tooltip": "",
+    "group": "Responses"
+  },
+    "Loss": {
+    "type": "textbox",
+    "value": "FeelsBadMan",
+    "label": "Emote/Message for Losing",
+    "tooltip": "",
+    "group": "Responses"
+  },
+    "Back": {
+    "type": "textbox",
+    "value": "Kappa",
+    "label": "Emote/Message for getting money back",
+    "tooltip": "",
     "group": "Responses"
   },
     "loseall": {
