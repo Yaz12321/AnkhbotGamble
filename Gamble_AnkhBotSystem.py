@@ -160,9 +160,9 @@ def Execute(data):
                     
                     #send successful message
                     if bet != 0 and Parent.GetPoints(data.User) == 0:
-                        Parent.SendTwitchMessage(MySettings.loseall.format(data.User,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
+                        Parent.SendTwitchMessage(MySettings.loseall.format(data.UserName,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
                     else:
-                        Parent.SendTwitchMessage(MySettings.BaseResponse.format(data.User,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
+                        Parent.SendTwitchMessage(MySettings.BaseResponse.format(data.UserName,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
                     
                     # add cooldowns
                     Parent.AddUserCooldown(ScriptName,MySettings.Command,data.User,MySettings.UserCooldown)
@@ -170,7 +170,7 @@ def Execute(data):
                 
                 else:
                     #send not enough currency response
-                    Parent.SendTwitchMessage(MySettings.NotEnoughResponse.format(data.User,Parent.GetCurrencyName(),MySettings.Command,bet))
+                    Parent.SendTwitchMessage(MySettings.NotEnoughResponse.format(data.UserName,Parent.GetCurrencyName(),MySettings.Command,bet))
     return
 
 def Tick():
