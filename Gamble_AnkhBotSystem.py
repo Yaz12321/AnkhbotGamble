@@ -49,6 +49,7 @@ class Settings:
             self.Win = "FeelsGoodMan"
             self.Loss = "FeelsBadMan"
             self.Back = "Kappa"
+            self.MaxWin = 2
             
             
     # Reload settings on save through UI
@@ -152,8 +153,8 @@ def Execute(data):
                         b = 1
 
                     if MySettings.ratio == "RangeLoseToDouble":
-                        a = 21
-                        b = 10
+                        a = MySettings.MaxWin + 1
+                        b = 100
                     #remove points from the user triggering the command
                     Parent.RemovePoints(data.User, data.UserName, bet)
 

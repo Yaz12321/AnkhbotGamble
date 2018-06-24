@@ -37,6 +37,13 @@
     "tooltip": "Set what could happen: \r\n WinLose: Lose bet or Double bet \r\n WinEvenLose: Lose bet, get bet back, or Double \r\n RangeLoseToDouble: get points back from 0 to double",
     "group": "General"
   },
+    "MaxWin": {
+    "type": "numberbox",
+  	"label": "Maximum Winning",
+    "value": 200,
+    "tooltip": "as a percentage of gambled amount. 100 = get gambled amount back",
+  	"group": "General"
+  },
     "UseCD": {
     "type": "checkbox",
     "value": false,
