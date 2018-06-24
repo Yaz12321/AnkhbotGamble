@@ -79,7 +79,13 @@
     "tooltip": " {0} = user \r\n {1} = winnings \r\n {2} = amount gambled \r\n {3} = currency name \r\n {4} = user's points",
     "group": "Responses"
   },
-
+    "loseall": {
+    "type": "textbox",
+    "value": "LUL {0} has lost every single {3} in gambling!",
+    "label": "Lose all message",
+    "tooltip": " {0} = user \r\n {1} = winnings \r\n {2} = amount gambled \r\n {3} = currency name \r\n {4} = user's points",
+    "group": "Responses"
+  },
     "NotEnoughResponse": {
     "type": "textbox",
     "value": "{0} you don't have that amount to gamble.",

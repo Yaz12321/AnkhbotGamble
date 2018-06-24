@@ -45,6 +45,7 @@ class Settings:
             self.BaseResponse = "{0} just gambled {2} {3}! {0} managed to get {1} {3} back, and now has {4} {3} in total!"
             self.NotEnoughResponse = "{0} you don't have that amount to gamble."
             selt.ratio = "WinLose"
+            self.loseall = "LUL {0} has lost every single {3} in gambling!"
             
     # Reload settings on save through UI
     def ReloadSettings(self, data):
@@ -158,7 +159,10 @@ def Execute(data):
                     Parent.AddPoints(data.User,data.UserName, win)
                     
                     #send successful message
-                    Parent.SendTwitchMessage(MySettings.BaseResponse.format(data.User,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
+                    if bet != 0 and Parent.GetPoints(data.User) == 0:
+                        Parent.SendTwitchMessage(MySettings.loseall.format(data.User,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
+                    else:
+                        Parent.SendTwitchMessage(MySettings.BaseResponse.format(data.User,win,bet,Parent.GetCurrencyName(),Parent.GetPoints(data.User)))
                     
                     # add cooldowns
                     Parent.AddUserCooldown(ScriptName,MySettings.Command,data.User,MySettings.UserCooldown)
