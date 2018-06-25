@@ -32,17 +32,27 @@
     "ratio": {
     "type": "dropdown",
     "value": "WinLose",
-    "items": ["WinLose","WinEvenLose","RangeLoseToDouble"],
+    "items": ["WinLose","RangeLoseToMax"],
     "label": "Gambling Mode",
-    "tooltip": "Set what could happen: \r\n WinLose: Lose bet or Double bet \r\n WinEvenLose: Lose bet, get bet back, or Double \r\n RangeLoseToDouble: get points back from 0 to double",
-    "group": "General"
+    "tooltip": "Set what could happen: \r\n WinLose: Lose bet or Double bet \r\n RangeLoseToMax: get points back from 0 to Max",
+    "group": "GambleSettings"
   },
     "MaxWin": {
     "type": "numberbox",
   	"label": "Maximum Winning",
     "value": 200,
-    "tooltip": "as a percentage of gambled amount. 100 = get gambled amount back",
-  	"group": "General"
+    "tooltip": "as a percentage of gambled amount. 100 = get gambled amount back. ONLY APPLIES TO RANGE MODE.",
+  	"group": "GambleSettings"
+  },
+  "winratio": {
+    "type": "slider",
+    "label": "Win Ratio",
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "ticks": 1,
+    "tooltip": "Percentage of winning the gamble. 50 means a 50:50 win-lose ratio.",
+    "group": "GambleSettings"
   },
     "UseCD": {
     "type": "checkbox",

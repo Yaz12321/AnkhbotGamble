@@ -49,7 +49,8 @@ class Settings:
             self.Win = "FeelsGoodMan"
             self.Loss = "FeelsBadMan"
             self.Back = "Kappa"
-            self.MaxWin = 2
+            self.MaxWin = 200
+            self.winratio = 50
             
             
     # Reload settings on save through UI
@@ -141,28 +142,81 @@ def Execute(data):
                 total = Parent.GetPoints(data.User)
 
                 bet = int(sbet)
+
+               # winerratio = int(MySettings.winratio)
+
+                losing = 100 - MySettings.winratio
+ 
+
+                probability = []
+
+                i = 1
+
+                while i <= losing:
+                    probability.append('loser')
+                    i = i + 1
+
+
+
+
+                i = 1
+
+                while i <= MySettings.winratio:
+                    probability.append('winner')
+                    i = i + 1
+
+
+
                               
                 if bet <= total:
                     
-                    if MySettings.ratio == "WinLose":
-                        a = 2
-                        b = 0.5
 
-                    if MySettings.ratio == "WinEvenLose":
-                        a = 3
-                        b = 1
-
-                    if MySettings.ratio == "RangeLoseToDouble":
-                        a = MySettings.MaxWin + 1
-                        b = 100
                     #remove points from the user triggering the command
                     Parent.RemovePoints(data.User, data.UserName, bet)
 
-                        
-                    #add points to all viewers in dict
-                    win = int(bet*Parent.GetRandom(0,a)/b)
-                    Parent.AddPoints(data.User,data.UserName, win)
+                                                
+                    #Determind whether winner or loser:
+                    winnerloser = random.choice(probability)
+
+
+                    #Set values based on whether winner or loser:
                     
+                    if winnerloser == "winner":
+
+                        if MySettings.ratio == "WinLose":
+                            a = 3
+                            b = 1
+                            c = 2
+
+    ##                    if MySettings.ratio == "WinEvenLose":
+    ##                        a = 3
+    ##                        b = 1
+
+                        if MySettings.ratio == "RangeLoseToMax":
+                            a = MySettings.MaxWin + 1
+                            b = 100
+                            c = 101
+
+                    else:
+                        if MySettings.ratio == "WinLose":
+                            a = 1
+                            b = 1
+                            c = 0
+
+    ##                    if MySettings.ratio == "WinEvenLose":
+    ##                        a = 3
+    ##                        b = 1
+
+                        if MySettings.ratio == "RangeLoseToMax":
+                            a = 101
+                            b = 100
+                            c = 0
+
+                    #Set amount won/lost and give to user                    
+                    win = int(bet*Parent.GetRandom(c,a)/b)
+                    Parent.AddPoints(data.User,data.UserName, win)
+
+                    #Prepare response message                    
                     if win == bet:
                         WL = MySettings.Back
                         winnings = 0
