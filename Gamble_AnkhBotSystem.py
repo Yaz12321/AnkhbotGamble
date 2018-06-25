@@ -145,26 +145,28 @@ def Execute(data):
 
                # winerratio = int(MySettings.winratio)
 
+               
+
                 losing = 100 - MySettings.winratio
  
 
-                probability = []
-
-                i = 1
-
-                while i <= losing:
-                    probability.append('loser')
-                    i = i + 1
-
-
-
-
-                i = 1
-
-                while i <= MySettings.winratio:
-                    probability.append('winner')
-                    i = i + 1
-
+##                probability = []
+##
+##                i = 1
+##
+##                while i <= losing:
+##                    probability.append('loser')
+##                    i = i + 1
+##
+##
+##
+##
+##                i = 1
+##
+##                while i <= MySettings.winratio:
+##                    probability.append('winner')
+##                    i = i + 1
+##
 
 
                               
@@ -174,9 +176,16 @@ def Execute(data):
                     #remove points from the user triggering the command
                     Parent.RemovePoints(data.User, data.UserName, bet)
 
-                                                
+                    
                     #Determind whether winner or loser:
-                    winnerloser = random.choice(probability)
+                    prob = Parent.GetRandom(0,101)
+
+                    if prob <= MySettings.winratio:
+                        winnerloser = "winner"
+                    else:
+                        winnerloser = "loser"                        
+##                    #Determind whether winner or loser:
+##                    winnerloser = random.choice(probability)
 
 
                     #Set values based on whether winner or loser:
