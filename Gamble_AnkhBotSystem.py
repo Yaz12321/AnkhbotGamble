@@ -139,9 +139,13 @@ def Execute(data):
                 sbet = data.GetParam(1)
                 if sbet == "all":
                     sbet = Parent.GetPoints(data.User)
+
+
                 total = Parent.GetPoints(data.User)
 
                 bet = int(sbet)
+                if bet < 0:
+                    bet = -1 * bet
 
                # winerratio = int(MySettings.winratio)
 
