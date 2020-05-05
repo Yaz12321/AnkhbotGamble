@@ -47,7 +47,7 @@ class Settings:
             self.OnUserCooldown = "{0} the command is still on user cooldown for {1} seconds!"
             self.BaseResponse = "{0} just gambled {2} {3}! {0} managed to get {1} {3} back, and now has {4} {3} in total!"
             self.NotEnoughResponse = "{0} you don't have that amount to gamble."
-            selt.ratio = "WinLose"
+            self.ratio = "WinLose"
             self.loseall = "LUL {0} has lost every single {3} in gambling!"
             self.Win = "FeelsGoodMan"
             self.Loss = "FeelsBadMan"
