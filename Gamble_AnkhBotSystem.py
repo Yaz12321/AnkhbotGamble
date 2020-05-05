@@ -12,7 +12,7 @@ import random
 ScriptName = "Gamble"
 Website = "https://www.AnkhBot.com"
 Creator = "Yaz12321"
-Version = "1.0"
+Version = "1.0.1"
 Description = "Gamle some points, lose them all, get some points back, or double them points."
 
 settingsFile = os.path.join(os.path.dirname(__file__), "settings.json")
@@ -22,6 +22,9 @@ settingsFile = os.path.join(os.path.dirname(__file__), "settings.json")
 #---------------------------------------
 
 # Version:
+# > 1.0.1<
+    # Added Maximum Bet
+    
 # > 1.0 <
     # First Release
 
