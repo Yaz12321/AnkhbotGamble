@@ -51,6 +51,8 @@ class Settings:
             self.Back = "Kappa"
             self.MaxWin = 200
             self.winratio = 50
+            self.SetMax = False
+            self.MaxBet = 100
             
             
     # Reload settings on save through UI
@@ -139,6 +141,11 @@ def Execute(data):
                 sbet = data.GetParam(1)
                 if sbet == "all":
                     sbet = Parent.GetPoints(data.User)
+
+                if MySettings.SetMax == True:
+                    if sbet > MySettings.MaxBet:
+                        sbet = MySettings.MaxBet
+                
 
 
                 total = Parent.GetPoints(data.User)

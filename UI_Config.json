@@ -44,6 +44,20 @@
     "tooltip": "as a percentage of gambled amount. 100 = get gambled amount back. ONLY APPLIES TO RANGE MODE.",
   	"group": "GambleSettings"
   },
+    "SetMax": {
+    "type": "checkbox",
+    "value": false,
+  	"label": "Enale Max Bet",
+    "tooltip": "",
+  	"group": "GambleSettings"
+  },
+    "MaxBet": {
+    "type": "numberbox",
+  	"label": "Maximum Bet",
+    "value": 100,
+    "tooltip": "Maximum amount of points one can bet",
+  	"group": "GambleSettings"
+  },
   "winratio": {
     "type": "slider",
     "label": "Win Ratio",
