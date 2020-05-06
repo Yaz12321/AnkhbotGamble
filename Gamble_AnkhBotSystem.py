@@ -146,7 +146,7 @@ def Execute(data):
                     sbet = Parent.GetPoints(data.User)
 
                 if MySettings.SetMax == True:
-                    if sbet > MySettings.MaxBet:
+                    if int(sbet) > MySettings.MaxBet:
                         sbet = MySettings.MaxBet
                 
 
